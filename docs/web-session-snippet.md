@@ -42,7 +42,7 @@ fi
 
 # Branch tracking the skill commands.
 BRANCH="main"
-BASE="https://raw.githubusercontent.com/aibrain71-art/skills/${BRANCH}/commands"
+BASE="https://raw.githubusercontent.com/aibrain71-art/Skills/${BRANCH}/commands"
 DST="$HOME/.claude/commands"
 
 mkdir -p "$DST"
