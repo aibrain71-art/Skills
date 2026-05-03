@@ -5,6 +5,15 @@ Dieser Prompt erstellt zwei globale Claude-Code-Slash-Commands —
 Skill-Library abdecken: externe Skills aus GitHub vendoren, und Skills
 aus der Library in einzelne Projekte installieren.
 
+## TL;DR
+
+Ersetze im Prompt-Block unten zweimal `<OWNER>/<REPO>` durch deinen eigenen
+GitHub-Pfad (z. B. `meinuser/Skills`) und paste das Ganze in eine Claude-
+Code-Session, die in deinem Skills-Repo geöffnet ist. Claude legt die zwei
+Command-Dateien an, committet sie auf einen Feature-Branch, pusht und gibt
+dir den Einzeiler zum globalen Aktivieren auf jedem Gerät zurück. Mehr
+musst du nicht tun.
+
 ## Wie nutzen
 
 1. Forke oder lege dein eigenes Skills-Repo auf GitHub an. Struktur: jedes
