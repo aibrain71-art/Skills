@@ -40,8 +40,8 @@ if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
   exit 0
 fi
 
-# Branch tracking the skill commands. Switch to "main" once it's the default.
-BRANCH="claude/create-excalidraw-skill-qs3bW"
+# Branch tracking the skill commands.
+BRANCH="main"
 BASE="https://raw.githubusercontent.com/aibrain71-art/Skills/${BRANCH}/commands"
 DST="$HOME/.claude/commands"
 
@@ -85,9 +85,9 @@ verfügbar.
 
 ## Hinweise
 
-- **Branch:** Solange das Skills-Repo noch keinen `main`-Branch hat, zeigt
-  die URL auf den Feature-Branch. Sobald `main` der Default ist, ersetze
-  `claude/create-excalidraw-skill-qs3bW` durch `main`.
+- **Branch:** Die URL zeigt auf `main` (Default-Branch des Skills-Repos).
+  Falls du eine andere Branch willst (z. B. zum Testen einer Vorab-Version),
+  änder den `BRANCH=`-Wert im Script.
 - **Idempotent:** Der Hook überschreibt die Dateien einfach — mehrfaches
   Ausführen ist sicher.
 - **Nur Web:** Der `$CLAUDE_CODE_REMOTE`-Check stellt sicher, dass dein

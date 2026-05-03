@@ -26,8 +26,8 @@ if [ -d "$SRC_DIR" ]; then
     cp -f "$f" "$DST_DIR/"
   done
 else
-  # Fallback: fetch from GitHub raw on the current working branch.
-  BRANCH="claude/create-excalidraw-skill-qs3bW"
+  # Fallback: fetch from GitHub raw on the default branch.
+  BRANCH="main"
   BASE="https://raw.githubusercontent.com/aibrain71-art/Skills/${BRANCH}/commands"
   for cmd in skill-add.md skill-install.md; do
     curl -fsSL --max-time 5 "${BASE}/${cmd}" -o "${DST_DIR}/${cmd}" || true
