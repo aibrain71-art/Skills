@@ -87,9 +87,29 @@ Repo pasten kannst, um beide Slash Commands automatisch erzeugen zu lassen.
 
 ## Lizenz
 
-[MIT](./LICENSE) für eigenen Code in diesem Repo.
+[MIT](./LICENSE) für eigenen Code in diesem Repo (Slash Commands, Hooks,
+Helper-Skripte, Doku).
 
-Vendorte Skills behalten ihre ursprüngliche Lizenz — falls das Original-Repo
-eine `LICENSE` hat, liegt sie als `<skill>/LICENSE.upstream` bei. Wenn keine
-Original-Lizenz vorhanden ist, beachte die Default-Regeln des jeweiligen
-Source-Repos.
+## Vendoring Policy
+
+Skills aus externen Quellen werden in dieses Repo **kopiert** (vendored), nicht
+gelinkt — damit die Library self-contained und ohne Netzwerk nutzbar bleibt.
+Damit andere Autor:innen fair behandelt werden, gilt:
+
+1. **Lizenz übernehmen.** Hat das Source-Repo eine `LICENSE`, wird sie als
+   `<skill>/LICENSE.upstream` mitkopiert. Sie gilt weiterhin für den Code des
+   Skills.
+2. **Provenance dokumentieren.** Jedes vendored Skill enthält eine
+   `.upstream`-Datei mit Source-URL, exaktem Commit-SHA und Vendor-Datum.
+3. **Skills ohne Lizenz** werden mit Attribution vendored, im Bewusstsein, dass
+   "keine Lizenz" auf GitHub formal "all rights reserved" bedeutet. Diese
+   Library ist klein und persönlich; Verwendung ist Best-Effort. Falls ein:e
+   Autor:in widerspricht, wird der entsprechende Skill umgehend entfernt.
+4. **Copyleft-Lizenzen** (GPL, AGPL, LGPL) werden grundsätzlich **nicht
+   vendored**, um die MIT-Lizenz dieses Repos nicht zu kompromittieren. Falls
+   ein solcher Skill gewünscht ist, wird er im README verlinkt statt
+   einkopiert.
+5. **Kontakt für Lizenz-Anfragen.** Issue im Repo öffnen oder via GitHub
+   Profil — Reaktion innerhalb weniger Tage.
+
+`/skill-add` ist so gebaut, dass Punkte 1 und 2 automatisch passieren.
