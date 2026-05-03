@@ -81,5 +81,15 @@ Repo pasten kannst, um beide Slash Commands automatisch erzeugen zu lassen.
 │   └── settings.json            ← registriert den Hook
 ├── docs/                        ← Snippets & Anleitungen
 ├── PROMPT_FOR_OTHERS.md         ← teilbarer Setup-Prompt
+├── LICENSE                      ← MIT
 └── README.md                    ← du bist hier
 ```
+
+## Lizenz
+
+[MIT](./LICENSE) für eigenen Code in diesem Repo.
+
+Vendorte Skills behalten ihre ursprüngliche Lizenz — falls das Original-Repo
+eine `LICENSE` hat, liegt sie als `<skill>/LICENSE.upstream` bei. Wenn keine
+Original-Lizenz vorhanden ist, beachte die Default-Regeln des jeweiligen
+Source-Repos.
