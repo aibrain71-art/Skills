@@ -1,0 +1,4 @@
+source_url: https://github.com/microsoft/playwright-cli
+source_commit: fb2a027f2025f7ba7574f1aa1ce1f8cc09ce421b
+source_path: skills/playwright-cli
+vendored_at: 2026-05-06T12:20:00Z
