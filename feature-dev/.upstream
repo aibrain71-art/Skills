@@ -1,0 +1,5 @@
+source_url: https://github.com/waybarrios/opencode-power-pack
+source_commit: b98c1f54e223b9978e8c31f8c89870862e6a34ff
+source_path: skills/feature-dev
+upstream_of_upstream: anthropics/claude-code/plugins/feature-dev (per SKILL.md license note)
+vendored_at: 2026-05-11T20:37:05Z
