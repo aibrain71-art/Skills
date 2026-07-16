@@ -1,0 +1,5 @@
+source_url: https://github.com/forrestchang/andrej-karpathy-skills
+source_commit: unverified — lokale, angepasste Kopie (Upstream-HEAD beim Vendoring: 2c606141936f1eeef17fa3043a72095b4765b9c2, Inhalt weicht ab)
+source_path: skills/karpathy-guidelines
+vendored_at: 2026-07-16T12:00:44Z
+note: Aus lokaler Installation uebernommen. Upstream hat keine LICENSE — vendored mit Attribution gem. Vendoring Policy Punkt 3.
