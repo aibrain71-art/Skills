@@ -10,7 +10,14 @@ nie global — so deklariert jedes Projekt selbst, welche Skills es nutzt.
 
 | Skill | Beschreibung | Quelle |
 |---|---|---|
+| [`context7-cli`](./context7-cli) | Holt aktuelle Bibliotheks-Dokumentation über die `ctx7`-CLI, verwaltet Coding-Skills und konfiguriert Context7 MCP. | [upstash/context7](https://github.com/upstash/context7) |
 | [`excalidraw-diagram`](./excalidraw-diagram) | Erzeugt Excalidraw-Diagramme, die visuell argumentieren statt nur darzustellen — mit Brand-Farben, Code-Snippets und Playwright-Render-Validierung. | [coleam00/excalidraw-diagram-skill](https://github.com/coleam00/excalidraw-diagram-skill) |
+| [`feature-dev`](./feature-dev) | Führt Feature-Implementierungen durch einen strukturierten 7-Phasen-Workflow: Codebase-Analyse, Rückfragen, parallele Architektur-Entwürfe, Quality-Review. | [waybarrios/opencode-power-pack](https://github.com/waybarrios/opencode-power-pack) |
+| [`karpathy`](./karpathy) | Wendet Andrej Karpathys vier Coding-Prinzipien an: Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution. | [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) (angepasst) |
+| [`markov-hedge-fund-method`](./markov-hedge-fund-method) | Beobachtbares Markov-Regime-Modell für beliebige Ticker: Transitionsmatrix aus 20-Tage-Rolling-Returns, n-Step-Forecast, stationäre Verteilung, Walk-Forward-Backtest (Sharpe, Max Drawdown). Optionales HMM-Upgrade via hmmlearn. | eigener Skill |
+| [`notebooklm`](./notebooklm) | Programmatischer Vollzugriff auf Google NotebookLM: Notebooks anlegen, Quellen hinzufügen, Podcasts/Videos/Reports generieren und herunterladen. | [teng-lin/notebooklm-py](https://github.com/teng-lin/notebooklm-py) |
+| [`playwright-cli`](./playwright-cli) | Browser-Automatisierung und Web-Tests: navigieren, Formulare ausfüllen, Screenshots erstellen, Playwright-Tests fahren. | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli) |
+| [`watch`](./watch) | Schaut Videos (URL oder lokaler Pfad): Download via yt-dlp, Frames via ffmpeg, Transkript aus Captions oder Whisper-Fallback — beantwortet Fragen zum Videoinhalt. | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) |
 
 ## Setup
 
