@@ -1,0 +1,5 @@
+source_url: https://github.com/firecrawl/cli
+source_commit: 5cf5c926d35fc114dc7579b9dbad09811fd42335
+source_path: skills/firecrawl-map
+vendored_at: 2026-07-16T12:30:23Z
+note: Kein LICENSE-File im Upstream-Repo; package.json deklariert ISC — Attribution gem. Vendoring Policy Punkt 3. Benoetigt die Firecrawl-CLI (npm i -g firecrawl) und einen FIRECRAWL_API_KEY.
