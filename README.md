@@ -13,6 +13,16 @@ nie global — so deklariert jedes Projekt selbst, welche Skills es nutzt.
 | [`context7-cli`](./context7-cli) | Holt aktuelle Bibliotheks-Dokumentation über die `ctx7`-CLI, verwaltet Coding-Skills und konfiguriert Context7 MCP. | [upstash/context7](https://github.com/upstash/context7) |
 | [`excalidraw-diagram`](./excalidraw-diagram) | Erzeugt Excalidraw-Diagramme, die visuell argumentieren statt nur darzustellen — mit Brand-Farben, Code-Snippets und Playwright-Render-Validierung. | [coleam00/excalidraw-diagram-skill](https://github.com/coleam00/excalidraw-diagram-skill) |
 | [`feature-dev`](./feature-dev) | Führt Feature-Implementierungen durch einen strukturierten 7-Phasen-Workflow: Codebase-Analyse, Rückfragen, parallele Architektur-Entwürfe, Quality-Review. | [waybarrios/opencode-power-pack](https://github.com/waybarrios/opencode-power-pack) |
+| [`firecrawl-agent`](./firecrawl-agent) | KI-gesteuerte autonome Datenextraktion — navigiert komplexe Sites und liefert strukturiertes JSON nach Schema. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
+| [`firecrawl-cli`](./firecrawl-cli) | Umbrella-Skill: Websuche, Scraping und Seiten-Interaktion über die Firecrawl-CLI. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
+| [`firecrawl-crawl`](./firecrawl-crawl) | Bulk-Extraktion ganzer Websites oder Site-Bereiche, mit Tiefen- und Pfadfiltern. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
+| [`firecrawl-download`](./firecrawl-download) | Lädt ganze Websites als lokale Dateien herunter (Markdown, Screenshots, Multi-Format). ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
+| [`firecrawl-interact`](./firecrawl-interact) | Steuert Live-Browser-Sessions: klicken, Formulare, Logins, Pagination, Infinite Scroll. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
+| [`firecrawl-map`](./firecrawl-map) | Listet alle URLs einer Website auf, mit Suchfilter — findet die richtige Seite auf großen Sites. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
+| [`firecrawl-monitor`](./firecrawl-monitor) | Überwacht Webseiten (oder das Web selbst) auf Änderungen — Webhook-/E-Mail-Alerts mit KI-Rauschfilter. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
+| [`firecrawl-parse`](./firecrawl-parse) | Konvertiert lokale Dateien (PDF, DOCX, XLSX …) in sauberes Markdown. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
+| [`firecrawl-scrape`](./firecrawl-scrape) | Extrahiert sauberes Markdown aus beliebigen URLs, inkl. JS-gerenderter SPAs. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
+| [`firecrawl-search`](./firecrawl-search) | Websuche mit Volltext-Extraktion der Ergebnisse statt bloßer Snippets. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
 | [`grill-me`](./grill-me) | Unerbittliches Interview zum Schärfen eines Plans oder Designs — eine Frage pro Runde (mit empfohlener Antwort), bis jeder Zweig des Entscheidungsbaums geklärt ist. Nur per explizitem Aufruf. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [`grilling`](./grilling) | Begleit-Skill zu `grill-me` — enthält die eigentliche Interview-Logik der Grilling-Session. Beide zusammen installieren. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [`karpathy`](./karpathy) | Wendet Andrej Karpathys vier Coding-Prinzipien an: Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution. | [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) (angepasst) |
@@ -20,6 +30,8 @@ nie global — so deklariert jedes Projekt selbst, welche Skills es nutzt.
 | [`notebooklm`](./notebooklm) | Programmatischer Vollzugriff auf Google NotebookLM: Notebooks anlegen, Quellen hinzufügen, Podcasts/Videos/Reports generieren und herunterladen. | [teng-lin/notebooklm-py](https://github.com/teng-lin/notebooklm-py) |
 | [`playwright-cli`](./playwright-cli) | Browser-Automatisierung und Web-Tests: navigieren, Formulare ausfüllen, Screenshots erstellen, Playwright-Tests fahren. | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli) |
 | [`watch`](./watch) | Schaut Videos (URL oder lokaler Pfad): Download via yt-dlp, Frames via ffmpeg, Transkript aus Captions oder Whisper-Fallback — beantwortet Fragen zum Videoinhalt. | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) |
+
+⚿ = benötigt die Firecrawl-CLI (`npm i -g firecrawl`) und einen `FIRECRAWL_API_KEY` (Bezahldienst mit Free-Tier).
 
 ## Setup
 
