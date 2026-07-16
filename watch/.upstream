@@ -1,0 +1,5 @@
+source_url: https://github.com/bradautomates/claude-video
+source_commit: c333c2289e57bf040b32846f18d669e3f8edad9b
+source_path: 
+vendored_at: 2026-07-16T12:00:44Z
+note: Upstream-LICENSE liegt bereits als LICENSE im Skill-Root (kompletter Repo-Clone via git archive, Tag v0.1.3).
