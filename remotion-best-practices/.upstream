@@ -1,0 +1,5 @@
+source_url: https://github.com/remotion-dev/skills
+source_commit: 8b1d51ade295b2d9bd22a8f07047d13c0740f275
+source_path: skills/remotion-best-practices
+vendored_at: 2026-07-16T12:33:46Z
+note: Umbrella-Skill mit 7 Unter-Skills (create, render, captions, markup, interactivity, saas, mediabunny). Upstream hat weder LICENSE-Datei noch license-Feld in package.json — vendored mit Attribution gem. Vendoring Policy Punkt 3.
