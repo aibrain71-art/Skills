@@ -19,6 +19,7 @@ nie global — so deklariert jedes Projekt selbst, welche Skills es nutzt.
 | [`markov-hedge-fund-method`](./markov-hedge-fund-method) | Beobachtbares Markov-Regime-Modell für beliebige Ticker: Transitionsmatrix aus 20-Tage-Rolling-Returns, n-Step-Forecast, stationäre Verteilung, Walk-Forward-Backtest (Sharpe, Max Drawdown). Optionales HMM-Upgrade via hmmlearn. | eigener Skill |
 | [`notebooklm`](./notebooklm) | Programmatischer Vollzugriff auf Google NotebookLM: Notebooks anlegen, Quellen hinzufügen, Podcasts/Videos/Reports generieren und herunterladen. | [teng-lin/notebooklm-py](https://github.com/teng-lin/notebooklm-py) |
 | [`playwright-cli`](./playwright-cli) | Browser-Automatisierung und Web-Tests: navigieren, Formulare ausfüllen, Screenshots erstellen, Playwright-Tests fahren. | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli) |
+| [`remotion-best-practices`](./remotion-best-practices) | Best Practices für Remotion (Videos programmatisch mit React erzeugen) — Umbrella-Skill mit 7 Unter-Skills: create, render, captions, markup, interactivity, saas, mediabunny. | [remotion-dev/skills](https://github.com/remotion-dev/skills) |
 | [`watch`](./watch) | Schaut Videos (URL oder lokaler Pfad): Download via yt-dlp, Frames via ffmpeg, Transkript aus Captions oder Whisper-Fallback — beantwortet Fragen zum Videoinhalt. | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) |
 
 ## Setup
