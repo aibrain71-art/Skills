@@ -3,3 +3,4 @@ source_commit: e1e93d9bbced22ca74fc61858a62e4ca9e4a0607
 source_path: skills/garch (SKILL.md) + scripts/ (aus dem Repo-Root dazugelegt, da die SKILL.md sie referenziert; Upstream ist als Plugin strukturiert)
 vendored_at: 2026-07-16T12:43:06Z
 note: Scripts laufen mit uv run (Inline-Dependencies) — benoetigt uv. pine-script/ (TradingView-Indikator) nicht uebernommen.
+local_change: yfinance>=0.2 zu den Inline-Dependencies von scripts/garch_forecast.py ergaenzt — Upstream behandelt yfinance als optional, wodurch --ticker ohne Extra-Flag fehlschlug.
