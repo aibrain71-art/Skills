@@ -59,6 +59,13 @@ mkdir -p ~/.claude/commands && \
 $d = "$HOME\.claude\commands"; New-Item -ItemType Directory -Force -Path $d | Out-Null; Invoke-WebRequest "https://raw.githubusercontent.com/aibrain71-art/Skills/main/commands/skill-add.md" -OutFile "$d\skill-add.md"; Invoke-WebRequest "https://raw.githubusercontent.com/aibrain71-art/Skills/main/commands/skill-install.md" -OutFile "$d\skill-install.md"; "OK"
 ```
 
+### uv-Startcheck einrichten (optional, einmalig pro Gerät)
+
+Einige Skills (z. B. `garch-method`) brauchen [uv](https://docs.astral.sh/uv/).
+Ein kleiner SessionStart-Hook zeigt beim Claude-Start einen Hinweis, falls uv
+auf dem Gerät fehlt — Anleitung in [`docs/uv-check-hook.md`](./docs/uv-check-hook.md).
+Oder uv direkt installieren: `winget install astral-sh.uv` (Windows).
+
 ## Nutzung
 
 | Aktion | Befehl in einer Claude-Code-Session |
