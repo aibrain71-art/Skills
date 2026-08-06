@@ -1,0 +1,4 @@
+source_url: https://github.com/anthropics/claude-plugins-official
+source_commit: d6947b6f35ada84a029349c76e9e44b1d35fb71e
+source_path: plugins/claude-md-management/skills/claude-md-improver
+vendored_at: 2026-05-06T12:35:00Z
