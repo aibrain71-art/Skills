@@ -10,6 +10,7 @@ nie global — so deklariert jedes Projekt selbst, welche Skills es nutzt.
 
 | Skill | Beschreibung | Quelle |
 |---|---|---|
+| [`claude-md-improver`](./claude-md-improver) | Auditiert alle CLAUDE.md-Dateien eines Repos gegen Qualitätskriterien, gibt einen Report aus und aktualisiert sie nach Freigabe. | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) |
 | [`context7-cli`](./context7-cli) | Holt aktuelle Bibliotheks-Dokumentation über die `ctx7`-CLI, verwaltet Coding-Skills und konfiguriert Context7 MCP. | [upstash/context7](https://github.com/upstash/context7) |
 | [`excalidraw-diagram`](./excalidraw-diagram) | Erzeugt Excalidraw-Diagramme, die visuell argumentieren statt nur darzustellen — mit Brand-Farben, Code-Snippets und Playwright-Render-Validierung. | [coleam00/excalidraw-diagram-skill](https://github.com/coleam00/excalidraw-diagram-skill) |
 | [`feature-dev`](./feature-dev) | Führt Feature-Implementierungen durch einen strukturierten 7-Phasen-Workflow: Codebase-Analyse, Rückfragen, parallele Architektur-Entwürfe, Quality-Review. | [waybarrios/opencode-power-pack](https://github.com/waybarrios/opencode-power-pack) |
