@@ -10,9 +10,13 @@ nie global — so deklariert jedes Projekt selbst, welche Skills es nutzt.
 
 | Skill | Beschreibung | Quelle |
 |---|---|---|
+| [`brainstorming`](./brainstorming) | Formt eine Idee vor der Implementierung zu Design und Spec — eine Frage pro Runde, mit Design-Freigabe als Gate. | [obra/superpowers](https://github.com/obra/superpowers) |
 | [`context7-cli`](./context7-cli) | Holt aktuelle Bibliotheks-Dokumentation über die `ctx7`-CLI, verwaltet Coding-Skills und konfiguriert Context7 MCP. | [upstash/context7](https://github.com/upstash/context7) |
+| [`dispatching-parallel-agents`](./dispatching-parallel-agents) | Verteilt zwei oder mehr voneinander unabhängige Aufgaben auf parallele Subagenten mit je eigenem, gezielt gebautem Kontext. | [obra/superpowers](https://github.com/obra/superpowers) |
 | [`excalidraw-diagram`](./excalidraw-diagram) | Erzeugt Excalidraw-Diagramme, die visuell argumentieren statt nur darzustellen — mit Brand-Farben, Code-Snippets und Playwright-Render-Validierung. | [coleam00/excalidraw-diagram-skill](https://github.com/coleam00/excalidraw-diagram-skill) |
+| [`executing-plans`](./executing-plans) | Arbeitet einen geschriebenen Implementierungsplan in einer eigenen Session ab, mit Review-Checkpoints. | [obra/superpowers](https://github.com/obra/superpowers) |
 | [`feature-dev`](./feature-dev) | Führt Feature-Implementierungen durch einen strukturierten 7-Phasen-Workflow: Codebase-Analyse, Rückfragen, parallele Architektur-Entwürfe, Quality-Review. | [waybarrios/opencode-power-pack](https://github.com/waybarrios/opencode-power-pack) |
+| [`finishing-a-development-branch`](./finishing-a-development-branch) | Führt einen fertigen Branch zum Abschluss: Tests prüfen, Umgebung erkennen, Merge/PR/Cleanup zur Auswahl stellen. | [obra/superpowers](https://github.com/obra/superpowers) |
 | [`firecrawl-agent`](./firecrawl-agent) | KI-gesteuerte autonome Datenextraktion — navigiert komplexe Sites und liefert strukturiertes JSON nach Schema. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
 | [`firecrawl-cli`](./firecrawl-cli) | Umbrella-Skill: Websuche, Scraping und Seiten-Interaktion über die Firecrawl-CLI. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
 | [`firecrawl-crawl`](./firecrawl-crawl) | Bulk-Extraktion ganzer Websites oder Site-Bereiche, mit Tiefen- und Pfadfiltern. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
@@ -30,8 +34,18 @@ nie global — so deklariert jedes Projekt selbst, welche Skills es nutzt.
 | [`markov-hedge-fund-method`](./markov-hedge-fund-method) | Beobachtbares Markov-Regime-Modell für beliebige Ticker: Transitionsmatrix aus 20-Tage-Rolling-Returns, n-Step-Forecast, stationäre Verteilung, Walk-Forward-Backtest (Sharpe, Max Drawdown). Optionales HMM-Upgrade via hmmlearn. | eigener Skill |
 | [`notebooklm`](./notebooklm) | Programmatischer Vollzugriff auf Google NotebookLM: Notebooks anlegen, Quellen hinzufügen, Podcasts/Videos/Reports generieren und herunterladen. | [teng-lin/notebooklm-py](https://github.com/teng-lin/notebooklm-py) |
 | [`playwright-cli`](./playwright-cli) | Browser-Automatisierung und Web-Tests: navigieren, Formulare ausfüllen, Screenshots erstellen, Playwright-Tests fahren. | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli) |
+| [`receiving-code-review`](./receiving-code-review) | Bewertet Review-Feedback technisch, statt es reflexhaft umzusetzen — erst verifizieren, dann ändern. | [obra/superpowers](https://github.com/obra/superpowers) |
 | [`remotion-best-practices`](./remotion-best-practices) | Best Practices für Remotion (Videos programmatisch mit React erzeugen) — Umbrella-Skill mit 7 Unter-Skills: create, render, captions, markup, interactivity, saas, mediabunny. | [remotion-dev/skills](https://github.com/remotion-dev/skills) |
+| [`requesting-code-review`](./requesting-code-review) | Schickt einen Reviewer-Subagenten mit gezielt gebautem Kontext los, bevor sich Fehler weiter fortpflanzen. | [obra/superpowers](https://github.com/obra/superpowers) |
+| [`subagent-driven-development`](./subagent-driven-development) | Führt einen Plan Task für Task mit je frischem Subagenten aus, danach zweistufiges Review: erst Spec, dann Code-Qualität. | [obra/superpowers](https://github.com/obra/superpowers) |
+| [`systematic-debugging`](./systematic-debugging) | Erzwingt Root-Cause-Analyse vor jedem Fix — Symptomfixes gelten als Fehlschlag. | [obra/superpowers](https://github.com/obra/superpowers) |
+| [`test-driven-development`](./test-driven-development) | TDD-Disziplin: erst der Test, dann das Scheitern beobachten, dann der minimale Code. | [obra/superpowers](https://github.com/obra/superpowers) |
+| [`using-git-worktrees`](./using-git-worktrees) | Sorgt für einen isolierten Workspace — bevorzugt die nativen Worktree-Tools der Umgebung, sonst `git worktree`. | [obra/superpowers](https://github.com/obra/superpowers) |
+| [`using-superpowers`](./using-superpowers) | Meta-Skill: verpflichtet Claude, vor jeder Antwort nach passenden Skills zu suchen und sie aufzurufen. | [obra/superpowers](https://github.com/obra/superpowers) |
+| [`verification-before-completion`](./verification-before-completion) | Verlangt tatsächlich ausgeführte Verifikationsbefehle, bevor "fertig", "gefixt" oder "grün" behauptet werden darf. | [obra/superpowers](https://github.com/obra/superpowers) |
 | [`watch`](./watch) | Schaut Videos (URL oder lokaler Pfad): Download via yt-dlp, Frames via ffmpeg, Transkript aus Captions oder Whisper-Fallback — beantwortet Fragen zum Videoinhalt. | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) |
+| [`writing-plans`](./writing-plans) | Schreibt Implementierungspläne für Entwickler ohne Vorkontext: Dateien, Tasks, Tests, Doku — in Häppchen zerlegt. | [obra/superpowers](https://github.com/obra/superpowers) |
+| [`writing-skills`](./writing-skills) | Erstellt und überarbeitet Skills nach TDD-Logik, inklusive Test mit Subagenten vor dem Ausrollen. | [obra/superpowers](https://github.com/obra/superpowers) |
 
 ⚿ = benötigt die Firecrawl-CLI (`npm i -g firecrawl`) und einen `FIRECRAWL_API_KEY` (Bezahldienst mit Free-Tier).
 
