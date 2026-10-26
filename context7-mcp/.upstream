@@ -1,0 +1,5 @@
+source_url: https://github.com/upstash/context7
+source_commit: 13f3ef03d9956c2a43b3db43d46341f237732ca2
+source_path: skills/context7-mcp
+vendored_at: 2026-08-06T00:00:00Z
+note: SKILL.md ist bei 13f3ef0 unveraendert gegenueber 78b9826 (Stand des urspruenglichen Vendorings); Commit auf denselben Stand wie context7-cli gehoben.

@@ -11,6 +11,7 @@ nie global — so deklariert jedes Projekt selbst, welche Skills es nutzt.
 | Skill | Beschreibung | Quelle |
 |---|---|---|
 | [`context7-cli`](./context7-cli) | Holt aktuelle Bibliotheks-Dokumentation über die `ctx7`-CLI, verwaltet Coding-Skills und konfiguriert Context7 MCP. | [upstash/context7](https://github.com/upstash/context7) |
+| [`context7-mcp`](./context7-mcp) | Zieht aktuelle Bibliotheks-Docs über den Context7-MCP-Server statt aus Trainingsdaten — greift bei Framework-, API- und Setup-Fragen. | [upstash/context7](https://github.com/upstash/context7) |
 | [`excalidraw-diagram`](./excalidraw-diagram) | Erzeugt Excalidraw-Diagramme, die visuell argumentieren statt nur darzustellen — mit Brand-Farben, Code-Snippets und Playwright-Render-Validierung. | [coleam00/excalidraw-diagram-skill](https://github.com/coleam00/excalidraw-diagram-skill) |
 | [`feature-dev`](./feature-dev) | Führt Feature-Implementierungen durch einen strukturierten 7-Phasen-Workflow: Codebase-Analyse, Rückfragen, parallele Architektur-Entwürfe, Quality-Review. | [waybarrios/opencode-power-pack](https://github.com/waybarrios/opencode-power-pack) |
 | [`firecrawl-agent`](./firecrawl-agent) | KI-gesteuerte autonome Datenextraktion — navigiert komplexe Sites und liefert strukturiertes JSON nach Schema. ⚿ | [firecrawl/cli](https://github.com/firecrawl/cli) |
