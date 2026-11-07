@@ -1,0 +1,8 @@
+{
+  "appId": "ch.scooterrush.game",
+  "appName": "Scooter Rush",
+  "webDir": "dist",
+  "backgroundColor": "#0b1020",
+  "android": { "allowMixedContent": false },
+  "ios": { "contentInset": "never", "scrollEnabled": false }
+}
