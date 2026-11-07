@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Scooter Rush</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <div id="game"></div>
+  <div id="flash"></div>
+  <div id="popups"></div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div class="hud-top">
+      <div class="hud-left">
+        <div class="pill"><span class="lbl">Punkte</span><span id="hud-score">0</span><span id="hud-mult" class="mult hidden">x2</span></div>
+        <div class="pill"><span class="lbl">Zeit</span><span id="hud-time">0</span></div>
+        <div class="pill" id="hud-lives"></div>
+      </div>
+      <div class="hud-right">
+        <button class="icon-btn" id="btn-cam" aria-label="Kamera wechseln">🎥 <span id="cam-name">3D</span></button>
+        <button class="icon-btn" id="btn-pause" aria-label="Pause"><b>II</b></button>
+      </div>
+    </div>
+    <div class="hud-row2">
+      <div class="battery"><div id="hud-battery-fill"></div><span>🔋</span></div>
+      <div id="hud-list" class="shoplist"></div>
+      <div id="hud-powers"></div>
+    </div>
+    <div class="progress"><div id="hud-progress"></div><span id="hud-progress-dot">🛴</span></div>
+  </div>
+
+  <!-- Touch controls -->
+  <div id="touch" class="hidden">
+    <div class="tc-left">
+      <button class="tc" data-key="left">◀</button>
+      <button class="tc" data-key="right">▶</button>
+    </div>
+    <div class="tc-right">
+      <button class="tc small" data-key="brake">⏬<small>Bremse</small></button>
+      <button class="tc jump" data-key="jump">⤴<small>Sprung</small></button>
+      <button class="tc gas" data-key="gas">⚡<small>Gas</small></button>
+    </div>
+  </div>
+
+  <div id="countdown" class="hidden"></div>
+
+  <!-- Screens -->
+  <div id="screen-menu" class="screen">
+    <div class="logo">
+      <div class="logo-scooter">🛴</div>
+      <h1>SCOOTER<span>RUSH</span></h1>
+      <p class="tag">Straßen · Malls · Supermärkte — sammle alles ein!</p>
+    </div>
+    <div class="menu-buttons">
+      <button class="big" id="btn-play">▶ Spielen</button>
+      <button id="btn-levels">🗺 Levels</button>
+      <button id="btn-settings">⚙ Einstellungen</button>
+      <button id="btn-help">❓ Anleitung</button>
+    </div>
+    <div class="menu-foot" id="menu-total"></div>
+  </div>
+
+  <div id="screen-levels" class="screen hidden">
+    <h2>Level wählen</h2>
+    <div id="level-grid"></div>
+    <button class="back" data-back="menu">← Zurück</button>
+  </div>
+
+  <div id="screen-intro" class="screen hidden">
+    <div class="card">
+      <div class="lvl-num" id="intro-num"></div>
+      <h2 id="intro-name"></h2>
+      <p id="intro-desc"></p>
+      <h3>🛒 Einkaufsliste</h3>
+      <div id="intro-list" class="intro-list"></div>
+      <p class="hint" id="intro-goal"></p>
+      <div class="row">
+        <button class="back" data-back="levels">← Levels</button>
+        <button class="big" id="btn-start">Los geht's!</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-pause" class="screen dim hidden">
+    <div class="card">
+      <h2>Pause</h2>
+      <div class="col">
+        <button class="big" id="btn-resume">▶ Weiter</button>
+        <button id="btn-restart">↻ Neu starten</button>
+        <button id="btn-quit">⌂ Menü</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-result" class="screen dim hidden">
+    <div class="card">
+      <h2 id="res-title"></h2>
+      <div id="res-stars" class="stars"></div>
+      <div id="res-lines" class="res-lines"></div>
+      <div class="row">
+        <button id="btn-res-menu">⌂ Menü</button>
+        <button id="btn-res-retry">↻ Nochmal</button>
+        <button class="big" id="btn-res-next">Weiter ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-settings" class="screen hidden">
+    <div class="card">
+      <h2>Einstellungen</h2>
+      <label class="toggle"><input type="checkbox" id="set-sound" /> Sound</label>
+      <label class="toggle"><input type="checkbox" id="set-vibe" /> Vibration</label>
+      <label class="toggle"><input type="checkbox" id="set-autogas" /> Auto-Gas (Trotti fährt von selbst)</label>
+      <label class="select">Start-Kamera
+        <select id="set-cam">
+          <option value="chase">3D Verfolger</option>
+          <option value="fpv">Ego-Sicht</option>
+          <option value="side">Seitenansicht</option>
+          <option value="top">2D Draufsicht</option>
+        </select>
+      </label>
+      <button id="btn-reset" class="danger">Fortschritt löschen</button>
+      <button class="back" data-back="menu">← Zurück</button>
+    </div>
+  </div>
+
+  <div id="screen-help" class="screen hidden">
+    <div class="card help">
+      <h2>So geht's</h2>
+      <p>Fahre mit deinem E-Trotti durch Straßen, Einkaufszentren und Supermärkte. Sammle Münzen und die Sachen auf deiner <b>Einkaufsliste</b> und erreiche das <b>Ziel</b> bevor die Zeit abläuft.</p>
+      <ul>
+        <li><b>◀ ▶</b> lenken &nbsp; <b>⚡</b> Gas &nbsp; <b>⏬</b> bremsen &nbsp; <b>⤴</b> springen</li>
+        <li>Tastatur: Pfeile / WASD, Leertaste = Sprung, <b>C</b> = Kamera, <b>1–4</b> Kamera direkt, <b>P</b> = Pause</li>
+        <li><b>🎥</b> wechselt die Ansicht: 3D-Verfolger, Ego-Sicht (First Person), Seitenansicht, 2D-Draufsicht</li>
+        <li>Über niedrige Hindernisse (Einkaufswagen, Kartons, Hütchen, Schilder) kannst du <b>springen</b>. Autos, Regale und Pflanzen musst du umfahren!</li>
+        <li>🔋 Akku leer = langsam. Sammle Batterien! Gas verbraucht mehr Strom.</li>
+        <li>Power-ups: 🧲 Magnet · 🛡 Schutzschild · 🚀 Turbo · ⭐ Bonus</li>
+        <li>Schnell hintereinander sammeln = <b>Combo-Multiplikator</b> bis x5. Rampen geben Sprung-Bonus!</li>
+        <li>⭐ Ziel erreicht · ⭐⭐ Einkaufsliste komplett · ⭐⭐⭐ Punkteziel geschafft</li>
+      </ul>
+      <button class="back" data-back="menu">← Zurück</button>
+    </div>
+  </div>
+
+  <div id="rotate-hint">Tipp: Querformat spielt sich am besten ↻</div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

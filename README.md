@@ -143,3 +143,7 @@ Damit andere Autor:innen fair behandelt werden, gilt:
    Profil — Reaktion innerhalb weniger Tage.
 
 `/skill-add` ist so gebaut, dass Punkte 1 und 2 automatisch passieren.
+
+## Weitere Projekte
+
+- [`escooter-game`](./escooter-game): **Scooter Rush**, ein 3D-E-Trottinett-Sammelspiel für Android & iOS (Three.js + Capacitor) mit 8 Levels und 4 Kameraansichten (3D, Ego, Seite, 2D).

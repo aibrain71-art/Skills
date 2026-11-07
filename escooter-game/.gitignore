@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.DS_Store
+# native build outputs
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+ios/App/Pods/
+ios/App/build/
+ios/DerivedData/
+*.xcuserstate
+dist-single/
