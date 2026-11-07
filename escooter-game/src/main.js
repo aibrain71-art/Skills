@@ -698,8 +698,17 @@ $('set-sound').addEventListener('change', (e) => { save.settings.sound = e.targe
 $('set-vibe').addEventListener('change', (e) => { save.settings.vibe = e.target.checked; persist(); });
 $('set-autogas').addEventListener('change', (e) => { save.settings.autogas = e.target.checked; persist(); });
 $('set-cam').addEventListener('change', (e) => { save.settings.cam = e.target.value; persist(); });
+// two-tap confirmation (native confirm() dialogs are blocked in some webviews)
+let resetArmed = 0;
 $('btn-reset').addEventListener('click', () => {
-  if (confirm('Wirklich alle Sterne und Rekorde löschen?')) { save.levels = {}; persist(); showScreen('menu'); }
+  const b = $('btn-reset');
+  if (Date.now() - resetArmed < 4000) {
+    save.levels = {}; persist(); b.textContent = 'Fortschritt löschen'; resetArmed = 0; showScreen('menu');
+    return;
+  }
+  resetArmed = Date.now();
+  b.textContent = 'Nochmal tippen zum Löschen';
+  setTimeout(() => { if (Date.now() - resetArmed >= 4000) b.textContent = 'Fortschritt löschen'; }, 4100);
 });
 
 // Menu backdrop: a small showroom

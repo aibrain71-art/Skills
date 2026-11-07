@@ -41,6 +41,11 @@ npm install
 npm run dev        # http://localhost:5173 (auch im Handy-Browser im selben WLAN)
 ```
 
+## Schnell aufs Handy
+
+- **Android, fertige APK:** GitHub baut sie bei jedem Push automatisch (Workflow *Scooter Rush – Android APK*). Im Tab **Actions** den letzten Lauf öffnen und unter *Artifacts* `scooter-rush-apk` herunterladen. Das ZIP enthält `scooter-rush.apk`. Die Datei aufs Handy bringen und öffnen; die Installation aus unbekannten Quellen musst du dabei einmal erlauben.
+- **Ohne Installation (Android & iPhone):** `npm run build:single` erzeugt `dist-single/scooter-rush.html`, das ganze Spiel in einer einzigen Datei. Auf einen Webserver legen, im Handy-Browser öffnen und *Zum Home-Bildschirm hinzufügen*.
+
 ## Android-App bauen
 
 Voraussetzung: [Android Studio](https://developer.android.com/studio) mit Android SDK.
