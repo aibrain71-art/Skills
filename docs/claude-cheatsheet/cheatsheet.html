@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Claude Cheat Sheet</title>
+<style>
+  @page { size: A4 landscape; margin: 9mm; }
+  :root {
+    --ink: #1f1d1a; --muted: #6b665e; --line: #e4ded3; --bg: #ffffff;
+    --accent: #c15f3c; --accent-soft: #f6e9e2; --code-bg: #f4f1ec;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Inter", "DejaVu Sans", sans-serif; font-size: 7.6pt; line-height: 1.32; }
+  .page { page-break-after: always; min-height: 191mm; display: flex; flex-direction: column; }
+  .page:last-child { page-break-after: auto; }
+  header { display: flex; align-items: baseline; justify-content: space-between;
+    border-bottom: 2px solid var(--accent); padding-bottom: 2.5mm; margin-bottom: 3mm; }
+  header h1 { font-size: 17pt; margin: 0; letter-spacing: -0.02em; font-weight: 700; }
+  header h1 span { color: var(--accent); }
+  header .sub { color: var(--muted); font-size: 8pt; }
+  .cols { column-count: 4; column-gap: 4.5mm; flex: 1; column-fill: balance; }
+  section { break-inside: avoid; margin: 0 0 3mm; border: 1px solid var(--line);
+    border-radius: 2mm; padding: 2mm 2.4mm 2.2mm; }
+  h2 { font-size: 8.6pt; margin: 0 0 1.4mm; color: var(--accent); text-transform: uppercase;
+    letter-spacing: 0.06em; font-weight: 700; }
+  h3 { font-size: 7.8pt; margin: 1.6mm 0 0.6mm; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 0.55mm 0; vertical-align: top; border-bottom: 1px dotted var(--line); }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { padding-right: 2mm; width: 42%; word-break: break-word; }
+  code, kbd, pre { font-family: "DejaVu Sans Mono", monospace; font-size: 6.9pt; }
+  code { background: var(--code-bg); padding: 0 0.6mm; border-radius: 0.6mm; }
+  kbd { background: #fff; border: 1px solid #cfc8bb; border-bottom-width: 2px;
+    padding: 0 0.8mm; border-radius: 0.8mm; }
+  pre { background: var(--code-bg); margin: 0.8mm 0 0; padding: 1.4mm 1.8mm;
+    border-radius: 1mm; white-space: pre-wrap; line-height: 1.3; }
+  ul { margin: 0; padding-left: 3.2mm; }
+  li { margin: 0.35mm 0; }
+  .tip { background: var(--accent-soft); border-color: #ebcbbb; }
+  .muted { color: var(--muted); }
+  footer { color: var(--muted); font-size: 6.6pt; border-top: 1px solid var(--line);
+    padding-top: 1.4mm; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<!-- ============================ PAGE 1 ============================ -->
+<div class="page">
+<header>
+  <h1>Claude Code <span>Cheat Sheet</span></h1>
+  <div class="sub">Launch · flags · slash commands · shortcuts</div>
+</header>
+<div class="cols">
+
+<section>
+<h2>Start a session</h2>
+<table>
+<tr><td><code>claude</code></td><td>Interactive session in current folder</td></tr>
+<tr><td><code>claude "task"</code></td><td>Start with a first prompt</td></tr>
+<tr><td><code>claude -p "task"</code></td><td>Print mode: answer once, then exit (scripts / CI)</td></tr>
+<tr><td><code>cat log | claude -p "why?"</code></td><td>Pipe content in</td></tr>
+<tr><td><code>claude -c</code></td><td>Continue the most recent conversation</td></tr>
+<tr><td><code>claude -r</code></td><td>Pick a past session to resume</td></tr>
+<tr><td><code>claude update</code></td><td>Update to the latest version</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Useful CLI flags</h2>
+<table>
+<tr><td><code>--model opus</code></td><td>Choose model (alias or full ID)</td></tr>
+<tr><td><code>--permission-mode plan</code></td><td>Start in plan (read-only) mode</td></tr>
+<tr><td><code>--add-dir ../lib</code></td><td>Give access to extra folders</td></tr>
+<tr><td><code>--allowedTools "Bash(git:*)"</code></td><td>Pre-approve tools</td></tr>
+<tr><td><code>--output-format json</code></td><td><code>text</code> · <code>json</code> · <code>stream-json</code> (with <code>-p</code>)</td></tr>
+<tr><td><code>--max-turns 5</code></td><td>Cap agent turns in print mode</td></tr>
+<tr><td><code>--append-system-prompt</code></td><td>Add extra instructions</td></tr>
+<tr><td><code>--mcp-config file.json</code></td><td>Load MCP servers from a file</td></tr>
+<tr><td><code>--verbose</code></td><td>Show full turn-by-turn output</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Slash commands</h2>
+<table>
+<tr><td><code>/help</code></td><td>List all commands</td></tr>
+<tr><td><code>/clear</code></td><td>Wipe context — use between unrelated tasks</td></tr>
+<tr><td><code>/compact [focus]</code></td><td>Summarise history to free context</td></tr>
+<tr><td><code>/context</code></td><td>See what's filling the context window</td></tr>
+<tr><td><code>/model</code></td><td>Switch model</td></tr>
+<tr><td><code>/init</code></td><td>Generate a <code>CLAUDE.md</code> for the repo</td></tr>
+<tr><td><code>/memory</code></td><td>Edit CLAUDE.md memory files</td></tr>
+<tr><td><code>/config</code></td><td>Settings (theme, model, …)</td></tr>
+<tr><td><code>/permissions</code></td><td>Allow / deny tool rules</td></tr>
+<tr><td><code>/resume</code></td><td>Reopen an earlier session</td></tr>
+<tr><td><code>/rewind</code></td><td>Roll back code and/or chat to a checkpoint</td></tr>
+<tr><td><code>/agents</code></td><td>Create &amp; manage subagents</td></tr>
+<tr><td><code>/mcp</code></td><td>Manage MCP servers &amp; auth</td></tr>
+<tr><td><code>/hooks</code></td><td>Configure lifecycle hooks</td></tr>
+<tr><td><code>/review</code></td><td>Review a pull request</td></tr>
+<tr><td><code>/security-review</code></td><td>Security pass over pending changes</td></tr>
+<tr><td><code>/add-dir</code></td><td>Add a working directory</td></tr>
+<tr><td><code>/status</code> · <code>/doctor</code></td><td>Version, account, health check</td></tr>
+<tr><td><code>/export</code></td><td>Save the conversation</td></tr>
+<tr><td><code>/terminal-setup</code></td><td>Enable Shift+Enter newlines</td></tr>
+<tr><td><code>/login</code> · <code>/logout</code></td><td>Switch accounts</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Keyboard</h2>
+<table>
+<tr><td><kbd>Esc</kbd></td><td>Stop Claude mid-action (keeps context)</td></tr>
+<tr><td><kbd>Esc</kbd> <kbd>Esc</kbd></td><td>Jump back / edit an earlier message</td></tr>
+<tr><td><kbd>Shift</kbd>+<kbd>Tab</kbd></td><td>Cycle modes: normal → auto-accept edits → plan</td></tr>
+<tr><td><kbd>Shift</kbd>+<kbd>Enter</kbd></td><td>New line (or <code>\</code> + <kbd>Enter</kbd>)</td></tr>
+<tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Prompt history</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>V</kbd></td><td>Paste an image / screenshot</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd></td><td>Send running command to background</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>L</kbd></td><td>Clear the screen</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>C</kbd></td><td>Cancel input; twice to quit</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>D</kbd></td><td>Exit</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Prompt prefixes</h2>
+<table>
+<tr><td><code>@src/app.ts</code></td><td>Pull a file or folder into context</td></tr>
+<tr><td><code>!npm test</code></td><td>Run a shell command directly</td></tr>
+<tr><td><code>/name</code></td><td>Slash command or skill</td></tr>
+<tr><td><code>ultrathink</code></td><td>Ask for deeper reasoning on hard problems</td></tr>
+</table>
+</section>
+
+</div>
+<footer><span>Claude Code cheat sheet · page 1 / 3</span><span>Run <code>/help</code> for the exact list in your version</span></footer>
+</div>
+
+<div class="page">
+<header>
+  <h1>Claude Code <span>Configuration</span></h1>
+  <div class="sub">Memory · settings · commands · skills · hooks · MCP</div>
+</header>
+<div class="cols">
+
+<section>
+<h2>Memory: CLAUDE.md</h2>
+<table>
+<tr><td><code>./CLAUDE.md</code></td><td>Project rules, shared via git</td></tr>
+<tr><td><code>./CLAUDE.local.md</code></td><td>Personal, git-ignored</td></tr>
+<tr><td><code>~/.claude/CLAUDE.md</code></td><td>Your rules for every project</td></tr>
+</table>
+<p class="muted" style="margin:1mm 0 0">Keep it short: build/test commands, code style, gotchas, "never do X". Import other files with <code>@docs/style.md</code>.</p>
+</section>
+
+<section>
+<h2>Where things live</h2>
+<table>
+<tr><td><code>.claude/settings.json</code></td><td>Team settings (commit)</td></tr>
+<tr><td><code>.claude/settings.local.json</code></td><td>Personal overrides</td></tr>
+<tr><td><code>~/.claude/settings.json</code></td><td>User-wide settings</td></tr>
+<tr><td><code>.claude/commands/*.md</code></td><td>Custom slash commands</td></tr>
+<tr><td><code>.claude/skills/&lt;n&gt;/SKILL.md</code></td><td>Skills</td></tr>
+<tr><td><code>.claude/agents/*.md</code></td><td>Subagents</td></tr>
+<tr><td><code>.mcp.json</code></td><td>Project MCP servers</td></tr>
+</table>
+<p class="muted" style="margin:1mm 0 0">Project folders override <code>~/.claude/…</code> equivalents.</p>
+</section>
+
+<section>
+<h2>Permission rules</h2>
+<pre>{
+  "permissions": {
+    "allow": ["Bash(npm run test:*)",
+              "Bash(git diff:*)",
+              "Edit(src/**)"],
+    "deny":  ["Read(./.env)",
+              "Bash(rm -rf:*)"]
+  }
+}</pre>
+</section>
+
+<section>
+<h2>Custom command</h2>
+<p style="margin:0">File <code>.claude/commands/fix-issue.md</code> → run <code>/fix-issue 123</code></p>
+<pre>---
+description: Fix a GitHub issue
+---
+Read issue #$ARGUMENTS, find the cause,
+fix it, add a test, run the suite.</pre>
+</section>
+
+<section>
+<h2>Skill</h2>
+<p style="margin:0"><code>.claude/skills/pdf-report/SKILL.md</code> — Claude loads it when the description matches.</p>
+<pre>---
+name: pdf-report
+description: Build branded PDF reports.
+  Use when the user asks for a PDF.
+---
+1. Collect the data …
+2. Render with scripts/build.py</pre>
+</section>
+
+<section>
+<h2>Hooks</h2>
+<p style="margin:0 0 0.8mm">Shell commands the harness runs automatically on events:</p>
+<table>
+<tr><td><code>SessionStart</code></td><td>Setup, env checks</td></tr>
+<tr><td><code>UserPromptSubmit</code></td><td>Add context / validate prompt</td></tr>
+<tr><td><code>PreToolUse</code></td><td>Block or approve a tool call</td></tr>
+<tr><td><code>PostToolUse</code></td><td>Format / lint after edits</td></tr>
+<tr><td><code>Stop</code></td><td>Notify, run final checks</td></tr>
+<tr><td><code>PreCompact</code> · <code>Notification</code></td><td>Other lifecycle points</td></tr>
+</table>
+</section>
+
+<section>
+<h2>MCP servers</h2>
+<pre>claude mcp add &lt;name&gt; -- npx some-server
+claude mcp add --transport http \
+  &lt;name&gt; https://example.com/mcp
+claude mcp list</pre>
+</section>
+
+<section class="tip">
+<h2>The core loop</h2>
+<ol style="margin:0;padding-left:3.6mm">
+<li><b>Explore</b> — "read X and Y, don't write code yet".</li>
+<li><b>Plan</b> — <kbd>Shift</kbd>+<kbd>Tab</kbd> into plan mode; review the plan.</li>
+<li><b>Code</b> — let it implement; ask it to verify as it goes.</li>
+<li><b>Check</b> — run tests, lint, look at the diff.</li>
+<li><b>Commit</b> — "commit with a clear message and open a PR".</li>
+</ol>
+</section>
+
+<section>
+<h2>Habits that pay off</h2>
+<ul>
+<li>Give Claude a way to <b>verify</b>: tests, a build, a screenshot.</li>
+<li><code>/clear</code> between unrelated tasks; context is a budget.</li>
+<li>Correct early: <kbd>Esc</kbd> beats a long wrong run.</li>
+<li>Point at exact files with <code>@</code> instead of "somewhere in the code".</li>
+<li>Paste screenshots for UI work and errors.</li>
+<li>Put repeated instructions in <code>CLAUDE.md</code>, repeated workflows in a skill or command.</li>
+<li>Use subagents for broad searches so the main context stays clean.</li>
+<li>Commit often so <code>/rewind</code> and git both have checkpoints.</li>
+</ul>
+</section>
+
+</div>
+<footer><span>Claude Code cheat sheet · page 2 / 3</span><span>Run <code>/help</code> for the exact list in your version</span></footer>
+</div>
+
+<!-- ============================ PAGE 2 ============================ -->
+<div class="page">
+<header>
+  <h1>Working with <span>Claude</span></h1>
+  <div class="sub">Workflows · prompting · API quick reference</div>
+</header>
+<div class="cols">
+
+<section>
+<h2>Proven workflows</h2>
+<h3>Test-driven</h3>
+<p style="margin:0">"Write failing tests for X. Don't implement yet." → commit → "Make the tests pass without changing them."</p>
+<h3>Visual iteration</h3>
+<p style="margin:0">Give a mock-up → implement → screenshot → compare → repeat 2–3×.</p>
+<h3>Codebase Q&amp;A</h3>
+<p style="margin:0">"How does auth work here? Trace a login request end to end."</p>
+<h3>Headless / CI</h3>
+<pre>claude -p "fix lint errors" \
+  --allowedTools "Edit,Bash(npm run lint:*)" \
+  --output-format json</pre>
+</section>
+
+<section>
+<h2>Prompting principles</h2>
+<ul>
+<li><b>Be explicit.</b> Say what "done" looks like.</li>
+<li><b>Explain why.</b> Reasons beat bare rules.</li>
+<li><b>Give context:</b> audience, constraints, what you tried.</li>
+<li><b>Show examples</b> of the output you want (2–3 varied ones).</li>
+<li><b>Structure inputs</b> with XML tags: <code>&lt;doc&gt;</code>, <code>&lt;rules&gt;</code>.</li>
+<li><b>Say what to do</b>, not only what to avoid.</li>
+<li><b>Ask it to think</b> step by step on hard problems.</li>
+<li><b>Split big jobs</b> into a chain of smaller prompts.</li>
+<li><b>Allow "I don't know"</b> to reduce made-up answers.</li>
+<li><b>Ask for quotes</b> from sources before conclusions.</li>
+</ul>
+</section>
+
+<section>
+<h2>Prompt template</h2>
+<pre>&lt;role&gt;You are a senior data analyst.&lt;/role&gt;
+
+&lt;context&gt;
+Q3 sales CSV below. Audience: execs,
+non-technical, 2-minute read.
+&lt;/context&gt;
+
+&lt;task&gt;
+Find the 3 biggest changes vs Q2
+and explain likely causes.
+&lt;/task&gt;
+
+&lt;format&gt;
+Bullets, one number per bullet,
+end with one recommendation.
+&lt;/format&gt;
+
+&lt;data&gt;…&lt;/data&gt;</pre>
+</section>
+
+<section>
+<h2>Fixing weak answers</h2>
+<table>
+<tr><td>Too vague</td><td>Add audience, length, format, example</td></tr>
+<tr><td>Made things up</td><td>Supply sources; "quote first, then answer"</td></tr>
+<tr><td>Too long</td><td>Give a word limit or exact structure</td></tr>
+<tr><td>Ignores a rule</td><td>Explain why it matters; move it up</td></tr>
+<tr><td>Wrong direction</td><td>Ask for a plan first, approve, then build</td></tr>
+<tr><td>Inconsistent</td><td>Add examples; fix the output schema</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Model family</h2>
+<table>
+<tr><td><code>claude-fable-5-1</code></td><td>Fable 5.1</td></tr>
+<tr><td><code>claude-opus-5-5</code></td><td>Opus 5.5 — hardest reasoning &amp; agent work</td></tr>
+<tr><td><code>claude-sonnet-5-5</code></td><td>Sonnet 5.5 — balanced default</td></tr>
+<tr><td><code>claude-haiku-5-5</code></td><td>Haiku 5.5 — fast, cheap, high volume</td></tr>
+</table>
+<p class="muted" style="margin:1mm 0 0">Check current models &amp; pricing in the Anthropic docs.</p>
+</section>
+
+<section>
+<h2>API: first call</h2>
+<pre>curl https://api.anthropic.com/v1/messages \
+ -H "x-api-key: $ANTHROPIC_API_KEY" \
+ -H "anthropic-version: 2023-06-01" \
+ -H "content-type: application/json" \
+ -d '{"model":"claude-sonnet-5-5",
+      "max_tokens":1024,
+      "messages":[{"role":"user",
+        "content":"Hello, Claude"}]}'</pre>
+<h3>Python SDK</h3>
+<pre>import anthropic
+client = anthropic.Anthropic()
+msg = client.messages.create(
+  model="claude-sonnet-5-5",
+  max_tokens=1024,
+  system="Answer in one paragraph.",
+  messages=[{"role": "user",
+             "content": "Explain RAG"}])
+print(msg.content[0].text)</pre>
+</section>
+
+<section>
+<h2>API features</h2>
+<table>
+<tr><td><b>Streaming</b></td><td><code>"stream": true</code> for token-by-token output</td></tr>
+<tr><td><b>Tool use</b></td><td>Define <code>tools</code> with JSON schema; handle <code>tool_use</code> blocks</td></tr>
+<tr><td><b>Prompt caching</b></td><td><code>cache_control</code> on long, reused prefixes</td></tr>
+<tr><td><b>Batches</b></td><td>Async bulk jobs at a discount</td></tr>
+<tr><td><b>Vision / PDF</b></td><td>Send images &amp; documents as content blocks</td></tr>
+<tr><td><b>Thinking</b></td><td>Extended reasoning for complex tasks</td></tr>
+<tr><td><b>Agent SDK</b></td><td>Build agents on the Claude Code harness</td></tr>
+</table>
+</section>
+
+<section class="tip">
+<h2>This Skills repo</h2>
+<table>
+<tr><td><code>/skill-install</code></td><td>List skills in the library</td></tr>
+<tr><td><code>/skill-install &lt;name&gt;</code></td><td>Install into <code>.claude/skills/</code></td></tr>
+<tr><td><code>/skill-add &lt;github-url&gt;</code></td><td>Vendor an external skill + draft PR</td></tr>
+</table>
+</section>
+
+</div>
+<footer><span>Claude cheat sheet · page 3 / 3</span><span>Docs: docs.claude.com · code.claude.com</span></footer>
+</div>
+
+</body>
+</html>
